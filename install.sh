@@ -554,15 +554,15 @@ then
   fi
 else
   # On Linux, support only 64-bit Intel
-  if [[ "${UNAME_MACHINE}" == "aarch64" ]]
-  then
-    abort "$(
-      cat <<EOABORT
-Homebrew on Linux is not supported on ARM processors.
-  ${tty_underline}https://docs.brew.sh/Homebrew-on-Linux#arm-unsupported${tty_reset}
-EOABORT
-    )"
-  elif [[ "${UNAME_MACHINE}" != "x86_64" ]]
+#   if [[ "${UNAME_MACHINE}" == "aarch64" ]]
+#   then
+#     abort "$(
+#       cat <<EOABORT
+# Homebrew on Linux is not supported on ARM processors.
+#   ${tty_underline}https://docs.brew.sh/Homebrew-on-Linux#arm-unsupported${tty_reset}
+# EOABORT
+#     )"
+  if [[ "${UNAME_MACHINE}" != "x86_64" ]]
   then
     abort "Homebrew on Linux is only supported on Intel processors!"
   fi
